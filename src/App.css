@@ -1,0 +1,23 @@
+
+html {
+    background-color: #2b4f4a;
+    color: white;
+}
+
+.out{
+    color: red;
+}
+
+input{
+    border-radius: 5px;
+}
+
+button{
+    border-radius: 5px;
+}
+
+.tabela{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
