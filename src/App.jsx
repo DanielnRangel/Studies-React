@@ -20,12 +20,12 @@ function groupProducts(products){//Cria a função utilitária
     }
     grouped[product.category].push(product)//puxa para dentro da categoria atual todos os produtos pertencentes a essa categoria
   })
-  return grouped
+  return grouped//retorna o array grouped
 }
 
-function ProductRow({product : {name, stocked, price}}){
-  const displayName = stocked ? name : <span className="out">{name}</span>
-  return(
+function ProductRow({product : {name, stocked, price}}){//Cria o componente dos produtos individuais e ja desestrutura o objeto "product" recebido
+  const displayName = stocked ? name : <span className="out">{name}</span> //Cria um operador ternário para verificar se o produto está em estoque
+  return(//retorna um table row com o nomem do produto e o preço
     <tr>
       <td>{displayName}</td>
       <td>{price}</td>
@@ -33,8 +33,8 @@ function ProductRow({product : {name, stocked, price}}){
   )
 }
 
-function ProductCategoryRow({ category }){
-  return(
+function ProductCategoryRow({ category }){//Cria o componente responsável por separar os produtos em categorias
+  return(//retorna um table Head contendo a categoria
     <tr>
       <th colSpan="2">
         {category}
@@ -43,23 +43,23 @@ function ProductCategoryRow({ category }){
   )
 }
 
-function ProductTable({products}){
-  const grouped = groupProducts(products)
-  const rows = []
+function ProductTable({products}){//Cria o componente responsável por juntar os produtos e as categorias em uma tabela
+  const grouped = groupProducts(products)//Chama a função utilitária grouped e armazena os produtos agrupados no objeto grouped
+  const rows = []//Cria um array para armazenar todos os rows da tabela.
 
-  Object.keys(grouped).forEach((category) => {
-    rows.push(
-      <ProductCategoryRow key={category} category={category}/>
+  Object.keys(grouped).forEach((category) => {//Utiliza o object keys para passar por todos as categorias dentro do objeto grouped com o método forEach
+    rows.push(//Pra cada categoria dentro de grouped ele vai puxar para dentro do array rows essa categoria
+      <ProductCategoryRow key={category} category={category}/> //Chama o componente de categoria para ser armaenado dentro do arary e passa a categoria atual
     )
 
-    grouped[category].forEach((product) => {
-      rows.push(
-        <ProductRow key={product.name} product={product}/>
+    grouped[category].forEach((product) => {//Para cada item dentro de cada categoria em grouped:
+      rows.push(//Puxa os itens por categoria para dentro de rows
+        <ProductRow key={product.name} product={product}/>//Chama o componente de itens para ser armazenado dentro de rows e retornar os itens
       )
     })
   })  
 
-  return (
+  return (//Retorna uma tabela contendo todos os itens e categorias
     <table>
       <thead>
         <tr>
@@ -72,8 +72,8 @@ function ProductTable({products}){
   )
 }
 
-function SearchBar(){
-  return(
+function SearchBar(){//Cria o componente responsável pela barra de busca
+  return(//retorna um formulário contendo a barra de busca e uma checkbox para filtrar os itens
     <form>
       <input type="text" placeholder="search..."/>
       <br />
@@ -87,7 +87,7 @@ function SearchBar(){
 
 }
 
-function FilterableProductTable({products}){
+function FilterableProductTable({products}){//Cria a função responsável por retornar as anteriores de forma organizada
   return(
     <div>
       <SearchBar />
@@ -96,7 +96,7 @@ function FilterableProductTable({products}){
   )
 }
 
-export default function App(){
+export default function App(){//Cria a função default que vai ser exportada para o main e retornar o componente anterior passando o props inicial
   return(
     <div className="tabela">
       <FilterableProductTable products={PRODUCTS}/>
