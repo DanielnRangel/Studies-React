@@ -1,18 +1,42 @@
-# React + Vite
+# 📚 Estudos de React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém meus estudos em React, com foco em fundamentos como:
 
-Currently, two official plugins are available:
+- Componentes
+- Props
+- State (useState)
+- Renderização de listas
+- Manipulação de eventos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologias utilizadas
 
-## React Compiler
+- React
+- Vite
+- JavaScript
+- CSS
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## ▶️ Como executar
 
-Note: This will impact Vite dev & build performances.
+```bash
+# clonar o repositório
+git clone https://github.com/seu-usuario/nome-do-repo.git
 
-## Expanding the ESLint configuration
+# entrar na pasta
+cd nome-do-repo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# instalar dependências
+npm install
+
+# rodar o projeto
+npm run dev
+
+## 🔜 Próximos passos
+
+- [ ] Implementar busca de produtos
+- [ ] Adicionar filtro por estoque
+- [ ] Melhorar estilização
+- [ ] Aprender useEffect
+
+## 👨‍💻 Autor
+
+Feito por Daniel Rangel  
