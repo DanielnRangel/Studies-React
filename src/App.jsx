@@ -85,14 +85,14 @@ function SearchBar({filterText, inStockOnly, onFilterTextChange, onInStockOnlyCh
     <form>
       <input 
       type="text" 
-      value={filterText} 
+      value={filterText}    //Passa o valor inserido para o filterText
       placeholder="search..."
-      onChange = {(e) => onFilterTextChange(e.target.value)} /> //Quando houver mudança no input ele vai realizar chamar o setFilterText e pessar o texto inserido pelo usuário
+      onChange = {(e) => onFilterTextChange(e.target.value)} /> //Quando houver mudança no input ele vai chamar o setFilterText e pessar o texto inserido pelo usuário
       <br />
       <label>
         <input 
         type="checkbox" 
-        checked = {inStockOnly} 
+        checked = {inStockOnly}   //Pasas o valor booleano para o inStockOnly
         onChange = {(e) => onInStockOnlyChange(e.target.checked)} />//Qunado houver mudança no checkbox ele vai chamar o setInStockOnly e atualizar o boolean
         {' '}
         Only show products in stock
@@ -103,8 +103,8 @@ function SearchBar({filterText, inStockOnly, onFilterTextChange, onInStockOnlyCh
 }
 
 function FilterableProductTable({products}){    //Cria a função responsável por retornar as anteriores de forma organizada
-  const [filterText, setFilterText] = useState('')
-  const [inStockOnly, setInStockOnly] = useState(false)
+  const [filterText, setFilterText] = useState('')    //Cria o useState para armazenar o filtro de texto inserido pelo usuário
+  const [inStockOnly, setInStockOnly] = useState(false)   //Cria o useState para armazenar o estado da checkBox
   return(
     <div>
       <SearchBar    //Passa as props
